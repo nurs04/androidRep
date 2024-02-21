@@ -1,4 +1,4 @@
-package kz.edu.sdu.composepractice
+package kz.edu.sdu.composepractice.practic_in_university
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -36,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kz.edu.sdu.composepractice.R
 import kz.edu.sdu.composepractice.ui.theme.ComposePracticeTheme
 
 class HomeWorkActivity: ComponentActivity() {
@@ -56,28 +57,39 @@ class HomeWorkActivity: ComponentActivity() {
 
 @Composable
 fun ArtWork() {
-    val imageList = listOf(R.drawable.pict1, R.drawable.pict2, R.drawable.pict3, R.drawable.pict4, R.drawable.pict5, R.drawable.pict6, R.drawable.pict7, R.drawable.pict8, R.drawable.pict9, R.drawable.pict10,)
+    val imageList = listOf(
+        R.drawable.pict1,
+        R.drawable.pict2,
+        R.drawable.pict3,
+        R.drawable.pict4,
+        R.drawable.pict5,
+        R.drawable.pict6,
+        R.drawable.pict7,
+        R.drawable.pict8,
+        R.drawable.pict9,
+        R.drawable.pict10,
+        R.drawable.pict3
+    )
     val title = listOf("Flower umbrella","Crystal Apple","Mountain and river","Tanos and Moon","Santa Kid","Firework","Tiger in mirror","Valentine","Bird","Christmas Tree",)
-    val year = listOf("1900 year","2024 year","2013 year","2019 year","2004 year","2023 year","2000 year","14 February","100 year","2024 year",)
+    val year = listOf("Nurik(1900)","Elon Mask(2024)","Agzhan(2003)","2019 year","2004 year","2023 year","2000 year","14 February","100 year","2024 year",)
     var currentImage by remember { mutableStateOf(0) }
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Column(modifier = Modifier.fillMaxHeight()) {
+        Column(modifier = Modifier.fillMaxHeight().padding(top = 50.dp, bottom = 0.dp, start = 35.dp)) {
             Card(
-                modifier = Modifier
-                    .padding(top = 50.dp, bottom = 0.dp, start = 35.dp),
+                modifier = Modifier,
                 elevation = CardDefaults.cardElevation(12.dp),
             ) {
                 Image(
                     painter = painterResource(id = imageList[currentImage]),
                     contentDescription = "Image",
                     Modifier
+                        .background(Color.Blue)
                         .width(320.dp)
                         .height(400.dp)
-                        .padding(22.dp)
-                        .background(Color.White),
+                        .padding(22.dp),
                     contentScale = ContentScale.Crop
                 )
             }
@@ -92,7 +104,7 @@ fun ArtWork() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 100.dp)
+                    .padding(top = 130.dp)
             ) {
                 Button(
                     onClick = {currentImage = (currentImage - 1 + imageList.size) % imageList.size},

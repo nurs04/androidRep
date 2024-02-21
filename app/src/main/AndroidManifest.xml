@@ -13,22 +13,42 @@
         android:theme="@style/Theme.ComposePractice"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".practic_in_university.MainActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposePractice">
         </activity>
 
-        <activity android:name=".HomeWorkActivity"
-                  android:exported="true"
+        <activity android:name=".practic_in_university.HomeWorkActivity"
+                  android:exported="false"
                   android:label="@string/app_name"
                   android:theme="@style/Theme.ComposePractice">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
         </activity>
+
+<!--        <activity-->
+<!--            android:name="kz.edu.sdu.composepractice.course_codelab.DiceRoller"-->
+<!--            android:exported="true"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:theme="@style/Theme.ComposePractice">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+        <activity
+            android:name="kz.edu.sdu.composepractice.course_codelab.activities.DogInformation"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ComposePractice">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
